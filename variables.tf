@@ -1,0 +1,23 @@
+variable "enviornment" {
+  description = "enviornment name for resource tagging and naming"
+  type        = string
+  default     = "production"
+}
+
+variable "vpc_cidr" {
+  description = "Cider block for production vpc"
+  type        = string
+  default     = "10.0.0.0/16"
+}
+
+variable "subnet_cidr" {
+  description = "Cidr block for subnet"
+  type        = string
+  default     = "10.0.1.0/24"
+}
+
+variable "project_name" {
+  description = "Project name for tagging"
+  type        = string
+  default     = "static-infrastruture"
+}
