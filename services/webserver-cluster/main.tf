@@ -14,9 +14,10 @@ resource "aws_security_group" "instance" {
         from_port = var.server_port
         to_port = var.server_port
         protocol = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
+        security_groups = [aws_security_group.alb.id]
+    }
 }
-}
+
 data "aws_vpc" "default" {
   default = true
 }
@@ -82,7 +83,7 @@ resource "aws_lb_listener" "http" {
     fixed_response {
       content_type = "text/plain"
       message_body = "404: Not Found"
-      status_code  = "400"
+      status_code  = "404"
     }
   }
 } 
