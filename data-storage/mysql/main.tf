@@ -2,7 +2,7 @@ provider "aws" {
     region = "us-east-1"
 }
 
-resource "aws_db_instance" "example_db" {
+resource "aws_db_instance" "example_db_stage" {
   allocated_storage    = 10
   db_name              = var.db_name
   engine               = "mysql"
