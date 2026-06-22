@@ -2,7 +2,7 @@ provider "aws" {
     region = "us-east-1"
 }
 
-resource "aws_db_instance" "example_db_stage" {
+resource "aws_db_instance" "example_db" {
   allocated_storage    = 10
   db_name              = var.db_name
   engine               = "mysql"
@@ -12,4 +12,3 @@ resource "aws_db_instance" "example_db_stage" {
   password             = var.db_password
   skip_final_snapshot  = true
 }
-
